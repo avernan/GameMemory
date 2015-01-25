@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">GameMemory</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Not again!</string>
     <string name="action_settings">Settings</string>
 
 </resources>
