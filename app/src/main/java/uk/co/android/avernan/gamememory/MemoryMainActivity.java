@@ -1,5 +1,6 @@
 package uk.co.android.avernan.gamememory;
 
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 
 public class MemoryMainActivity extends ActionBarActivity {
@@ -53,6 +56,9 @@ public class MemoryMainActivity extends ActionBarActivity {
      */
     public static class PlaceholderFragment extends Fragment {
 
+        private ImageButton[] tiles = new ImageButton[4];
+        private Handler handler = new Handler;
+
         public PlaceholderFragment() {
         }
 
@@ -60,6 +66,21 @@ public class MemoryMainActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_memory_main, container, false);
+            // Get a reference to tiles
+            tiles[0] = (ImageButton) rootView.findViewById(R.id.tile0);
+            tiles[1] = (ImageButton) rootView.findViewById(R.id.tile1);
+            tiles[2] = (ImageButton) rootView.findViewById(R.id.tile2);
+            tiles[3] = (ImageButton) rootView.findViewById(R.id.tile3);
+            for (int i = 0; i < tiles.length; ++i) {
+                final int index = i;
+                tiles[i].setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
+            }
             return rootView;
         }
     }
